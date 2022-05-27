@@ -1,3 +1,4 @@
+import { DocumentData } from 'firebase/firestore'
 import Image from 'next/image'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,14 +10,10 @@ import { RootState } from '../store'
 import { Movie } from '../typings'
 
 interface Props {
-  //   movie: Movie | DocumentData
-  movie: Movie
+  movie: Movie | DocumentData
 }
 
 const Thumbnail = ({ movie }: Props) => {
-  const { modalState: showModal, movieState } = useSelector(
-    (state: RootState) => state.modal
-  )
   const dispatch = useDispatch()
 
   return (
